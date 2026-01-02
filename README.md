@@ -6,6 +6,7 @@ N8n Unlocked: Run latest n8n with extra features:
 -   Execute Command node
 -   Local File Trigger node
 -   Allow install any npm package in custom community nodes
+- Uses latest official n8n package, no weird mods
 
 ## Steps:
 
@@ -38,4 +39,13 @@ important:
 run on host (allow container write)
 ```sh
 chown -R 1000:1000 ./downloads
+```
+
+# Updating:
+
+Run build again with no cache, will replace old image with the up to date one. Then simply restart. 
+
+
+```sh
+docker buildx build -t n8n:ytdlp --no-cache . && docker compose down && docker compose up -d
 ```
