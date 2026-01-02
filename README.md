@@ -5,6 +5,7 @@ N8n Unlocked: Run latest n8n with extra features:
 -  Python Code node enabled
 -   Execute Command node
 -   Local File Trigger node
+-   Allow install any npm package in custom community nodes
 
 ## Steps:
 
