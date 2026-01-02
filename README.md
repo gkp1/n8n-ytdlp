@@ -1,6 +1,6 @@
 # n8n-ytdlp
 N8n Unlocked: Run latest n8n with extra features:
-- [Yt-dlp](https://github.com/yt-dlp/yt-dlp) for video downloading
+- [Yt-dlp](https://github.com/yt-dlp/yt-dlp) for video downloading (default download path is ./downloads on host machine) 
 -  Deno
 -  Python Code node enabled
 -   Execute Command node
