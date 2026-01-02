@@ -1,5 +1,10 @@
 # n8n-ytdlp
-N8n Unlocked: Yt-dlp for video downloading, Deno, Python Code node enabled, ExecuteCommand node and more
+N8n Unlocked: Run latest n8n with extra features:
+- [Yt-dlp](https://github.com/yt-dlp/yt-dlp) for video downloading
+-  Deno
+-  Python Code node enabled
+-   Execute Command node
+-   Local File Trigger node
 
 ## Steps:
 
