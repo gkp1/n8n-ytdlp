@@ -1,8 +1,7 @@
 # n8n-ytdlp 🍀
 N8n Unlocked: Run latest n8n with extra features:
--  [Yt-dlp](https://github.com/yt-dlp/yt-dlp) for video downloading (default download path is ./downloads on host machine)
-
-- Yt-dlp discord:   [![Discord](https://img.shields.io/discord/807245652072857610?color=blue&labelColor=555555&label=&logo=discord&style=for-the-badge)](https://discord.gg/H5MNcFW63r "Discord")
+- \* Uses latest official n8n package, no weird mods
+-  [Yt-dlp](https://github.com/yt-dlp/yt-dlp) for video downloading (writes to `./downloads` on host machine). Yt-dlp discord:   [![Discord](https://img.shields.io/discord/807245652072857610?color=blue&labelColor=555555&label=&logo=discord&style=for-the-badge)](https://discord.gg/H5MNcFW63r "Discord")
 -  Deno
 -  Python Code node enabled
 -   Execute Command node
@@ -15,9 +14,10 @@ N8n Unlocked: Run latest n8n with extra features:
 )
 
 -   Allow install any npm package in custom community nodes
-- Uses latest official n8n package, no weird mods
 
 ### Requirements:
+- Docker
+- [Docker compose](https://docs.docker.com/compose/install) (optional, strongly recommended)
 
 #### 📥 Saving media locally: 
 Permission to write to disk (./downloads)
