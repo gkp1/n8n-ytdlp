@@ -53,7 +53,7 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-    networks: # ##### ADD THIS BLOCK #####
+    networks:
       - default
 
   task-runners:
