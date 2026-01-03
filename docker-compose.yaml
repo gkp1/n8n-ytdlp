@@ -61,11 +61,11 @@ services:
     container_name: n8n-runners
     environment:
       - N8N_RUNNERS_TASK_BROKER_URI=http://n8n:5679
-      - N8N_RUNNERS_AUTH_TOKEN=set-secret-token
+      - N8N_RUNNERS_AUTH_TOKEN=${N8N_RUNNERS_AUTH_TOKEN}
       - NODE_FUNCTION_ALLOW_BUILTIN=*
       - NODE_FUNCTION_ALLOW_EXTERNAL=*
       - N8N_RUNNERS_ALLOW_PROTOTYPE_MUTATION=true
-      - GENERIC_TIMEZONE=America/Sao_Paulo
+      - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
     depends_on:
       - n8n
 
