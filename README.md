@@ -27,6 +27,14 @@ The only extra file system perms this image has is:
    - container still can't read/write to any other folder, only those 2 folders
    - container still can't run cli commands on the host, only inside the container
    - n8n nodes (Code/Exec/Etc) do not have access to any env variable content
+   - We set these by default in n8n vars:
+`N8N_NODES_DATA_ALLOW_LIST=/home/node/downloads/` - Mandatory, Allow nodes to access media folder
+`N8N_NODES_DATA_ALLOW_LIST=/home/node/downloads/` - Probably needed
+`N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=false` - Probably needed
+`N8N_INSECURE_DISABLE_WEBHOOK_IFRAME_SANDBOX=true` - Optional, Allow returning raw html pages in Respond to webhook node / other web app related uses (disable if you don't need)
+`N8N_BLOCK_FS_READ_ACCESS=false` - Optional
+`N8N_BLOCK_FS_WRITE_ACCESS=false` - Optional
+
 
 #### 📥 Saving media locally: 
 - Yt-dlp automatically saves files to `/home/node/downloads` -> mapped to host machine `./downloads`
