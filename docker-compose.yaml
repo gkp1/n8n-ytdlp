@@ -40,7 +40,6 @@ services:
       - DOMAIN_NAME=${DOMAIN_NAME}
       - SUBDOMAIN=${SUBDOMAIN}
       - N8N_EDITOR_BASE_URL=${N8N_EDITOR_BASE_URL}
-      - N8N_INSECURE_DISABLE_WEBHOOK_IFRAME_SANDBOX=true
       - N8N_RESTRICT_FILE_ACCESS_TO=/home/node/.n8n-files;/home/node/downloads/ 
     env_file:
       - .env
