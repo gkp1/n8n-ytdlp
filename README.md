@@ -33,7 +33,6 @@ The only extra file system perms this image has is:
    - container still can't read/write to any other folder, only those 2 folders
    - container still can't run cli commands on the host, only inside the container
    - n8n nodes (Code/Exec/Etc) do not have access to any env variable content
-- adding ExecCommand and FileTrigger node
 
 ## Steps:
 
