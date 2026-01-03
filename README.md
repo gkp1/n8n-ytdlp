@@ -67,3 +67,4 @@ _default: latest n8n version from npm_
 docker buildx build -t n8n:ytdlp --no-cache . && docker compose down && docker compose up -d
 ```
 pending - sync n8n runners and n8n versions
+- add default localhost ip ready to go env vars
