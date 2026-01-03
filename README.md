@@ -1,10 +1,19 @@
 # n8n-ytdlp 🍀
 N8n Unlocked: Run latest n8n with extra features:
-- [Yt-dlp](https://github.com/yt-dlp/yt-dlp) for video downloading (default download path is ./downloads on host machine) 
+-  [Yt-dlp](https://github.com/yt-dlp/yt-dlp) for video downloading (default download path is ./downloads on host machine)
+
+- Yt-dlp discord:   [![Discord](https://img.shields.io/discord/807245652072857610?color=blue&labelColor=555555&label=&logo=discord&style=for-the-badge)](https://discord.gg/H5MNcFW63r "Discord")
 -  Deno
 -  Python Code node enabled
 -   Execute Command node
+
+![](https://raw.githubusercontent.com/gkp1/files/refs/heads/main/n8n-ytdlp/exec2026-01-02_23-08.png
+)
 -   Local File Trigger node
+
+![](https://raw.githubusercontent.com/gkp1/files/refs/heads/main/n8n-ytdlp/localfile2026-01-02_23-08_1.png
+)
+
 -   Allow install any npm package in custom community nodes
 - Uses latest official n8n package, no weird mods
 
