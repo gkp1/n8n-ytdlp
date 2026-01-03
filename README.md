@@ -26,6 +26,12 @@ N8n Unlocked: Run latest n8n with extra features:
 #### ☁️ Running in serverless cloud providers:
 - This will run fine on serverless, you just won't be able to save files locally - use `yt-dlp -g <link>` in Execute Command node to get direct video file urls without needing any disk read/write permissions. Then fetch media with http node or elsewhere.
 
+#### 🛡️ Security: 
+Literally the only extra perms this has is:
+- adding WriteFile+ReadFile node permission to access the downloads folder (by default .n8n-files is only folder with r/w allowed)
+   - `- N8N_RESTRICT_FILE_ACCESS_TO=/home/node/.n8n-files;/home/node/downloads/` 
+- adding ExecCommand and FileTrigger node
+
 ## Steps:
 
 ### Clone repo && cd 
