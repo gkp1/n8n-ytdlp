@@ -51,16 +51,16 @@ nano .env
 docker compose up -d && docker ps
 ```
 
-important:
+⚠️ Important:
 If you're on linux: run on host (allow container write)
 ```sh
 chown -R 1000:1000 ./downloads
 ```
 
-# Updating:
+# ⬆️ Updating:
 
-Run build again with no cache, will replace old image with the up to date one. Then simply restart. 
-_default version: latest n8n version from npm_
+Rebuild with no cache, restart. 
+_default: latest n8n version from npm_
 
 ```sh
 docker buildx build -t n8n:ytdlp --no-cache . && docker compose down && docker compose up -d
