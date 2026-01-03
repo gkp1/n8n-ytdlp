@@ -33,6 +33,9 @@ The only extra file system perms this image has is:
       - `N8N_INSECURE_DISABLE_WEBHOOK_IFRAME_SANDBOX=true` - Optional, Allow returning raw html pages in Respond to webhook node / other web app related uses (disable if you don't need)
       - `N8N_BLOCK_FS_READ_ACCESS=false` - Optional
       - `N8N_BLOCK_FS_WRITE_ACCESS=false` - Optional
+      - `NODE_FUNCTION_ALLOW_BUILTIN=*` - Optional, Allow any built in npm libs
+      - `NODE_FUNCTION_ALLOW_EXTERNAL=*` - Optional, Allow any external npm libs
+
 --------
 
 #### 📥 Saving media locally: 
