@@ -6,22 +6,16 @@ N8n Unlocked: Run latest n8n with extra features:
 -  Python Code node enabled
 -   Execute Command node
 
-![](https://raw.githubusercontent.com/gkp1/files/refs/heads/main/n8n-ytdlp/exec2026-01-02_23-08.png
-)
+![](https://raw.githubusercontent.com/gkp1/files/refs/heads/main/n8n-ytdlp/exec2026-01-02_23-08.png)
 -   Local File Trigger node
 
-![](https://raw.githubusercontent.com/gkp1/files/refs/heads/main/n8n-ytdlp/localfile2026-01-02_23-08_1.png
-)
+![](https://raw.githubusercontent.com/gkp1/files/refs/heads/main/n8n-ytdlp/localfile2026-01-02_23-08_1.png)
 
 -   Allow install any npm package in custom community nodes
 
 ### Requirements:
 - Docker
 - [Docker compose](https://docs.docker.com/compose/install) (optional, strongly recommended)
-
-#### 📥 Saving media locally: 
-- Yt-dlp automatically saves files to `/home/node/downloads` -> mapped to host machine `./downloads`
-- ReadFile/WriteFile node access permissions: `/home/node/downloads`
 
 #### ☁️ Running in serverless cloud providers:
 - This will run fine on serverless, you just won't be able to save files locally - use `yt-dlp -g <link>` in Execute Command node to get direct video file urls without needing any disk read/write permissions. Then fetch media with http node or elsewhere.
@@ -33,6 +27,11 @@ The only extra file system perms this image has is:
    - container still can't read/write to any other folder, only those 2 folders
    - container still can't run cli commands on the host, only inside the container
    - n8n nodes (Code/Exec/Etc) do not have access to any env variable content
+
+#### 📥 Saving media locally: 
+- Yt-dlp automatically saves files to `/home/node/downloads` -> mapped to host machine `./downloads`
+- ReadFile/WriteFile node access permissions: `/home/node/downloads`
+
 
 ## Steps:
 
