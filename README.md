@@ -8,6 +8,12 @@ N8n Unlocked: Run latest n8n with extra features:
 -   Allow install any npm package in custom community nodes
 - Uses latest official n8n package, no weird mods
 
+#### Requirements:
+Saving media locally: Permission to write to disk (./downloads)
+
+#### Running in serverless cloud providers:
+This will run fine on serverless, you just won't be able to save files locally - use `yt-dlp -g <link>` in Execute Command node to get direct video file urls without needing any disk read/write permissions. Then fetch media or etc.
+
 ## Steps:
 
 ### Clone repo && cd 
@@ -34,9 +40,8 @@ nano .env
 docker compose up -d && docker ps
 ```
 
-
 important:
-run on host (allow container write)
+If you're on linux: run on host (allow container write)
 ```sh
 chown -R 1000:1000 ./downloads
 ```
