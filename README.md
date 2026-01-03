@@ -22,11 +22,13 @@ N8n Unlocked: Run latest n8n with extra features:
 ------------
 #### 🛡️ Security: 
 The only extra file system perms this image has is:
-- adding WriteFile+ReadFile node permission to access the downloads folder (by default .n8n-files is only folder with r/w allowed)
+- adding WriteFile+ReadFile node permission to access the downloads folder: (by default .n8n-files is only folder with r/w allowed)
    - `- N8N_RESTRICT_FILE_ACCESS_TO=/home/node/.n8n-files;/home/node/downloads/`
    - container still can't read/write to any other folder, only those 2 folders
    - container still can't run cli commands on the host, only inside the container
+
    - n8n nodes (Code/Exec/Etc) do not have access to any env variable content
+
    - We set these by default in n8n vars:
       - `N8N_NODES_DATA_ALLOW_LIST=/home/node/downloads/` - Mandatory, Allow nodes to access media folder
       - `N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=false` - Mandatory, Probably needed
