@@ -24,7 +24,7 @@ N8n Unlocked: Run latest n8n with extra features:
 - ReadFile/WriteFile node access permissions: `/home/node/downloads`
 
 #### ☁️ Running in serverless cloud providers:
-- This will run fine on serverless, you just won't be able to save files locally - use `yt-dlp -g <link>` in Execute Command node to get direct video file urls without needing any disk read/write permissions. Then fetch media elsewhere.
+- This will run fine on serverless, you just won't be able to save files locally - use `yt-dlp -g <link>` in Execute Command node to get direct video file urls without needing any disk read/write permissions. Then fetch media with http node or elsewhere.
 
 ## Steps:
 
