@@ -63,7 +63,7 @@ docker buildx build -t n8n:ytdlp .
 ### Add valid n8n .env variables
 
 ```sh
-nano .env
+cp .env.example .env && nano .env
 ```
 
 ### Run -detached
