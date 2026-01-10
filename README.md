@@ -80,12 +80,18 @@ chown -R 1000:1000 ./downloads
 
 # ⬆️ Updating:
 
-Rebuild with no cache, restart. 
-_default: latest n8n version from npm_
+```sh
+cd n8n-ytdlp
+```
+
+Rebuild with no cache -> restart
 
 ```sh
 docker buildx build -t n8n:ytdlp --no-cache . && docker compose down && docker compose up -d
 ```
+
+_default version: latest n8n version from npm_
+
 
 #### todo
 - sync n8n runners and n8n versions
