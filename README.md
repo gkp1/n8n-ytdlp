@@ -32,11 +32,23 @@ The only extra file system perms this image has is:
 - We set these by default in n8n vars:
    - `N8N_NODES_DATA_ALLOW_LIST=/home/node/downloads/` - Mandatory, Allow nodes to access media folder
    - `N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=false` - Mandatory, Probably needed
-   - `N8N_INSECURE_DISABLE_WEBHOOK_IFRAME_SANDBOX=true` - Optional, Allow returning raw html pages in Respond to webhook node / other web app related uses (disable if you don't need)
    - `N8N_BLOCK_FS_READ_ACCESS=false` - Optional
    - `N8N_BLOCK_FS_WRITE_ACCESS=false` - Optional
    - `NODE_FUNCTION_ALLOW_BUILTIN=*` - Optional, Allow any built in npm libs
    - `NODE_FUNCTION_ALLOW_EXTERNAL=*` - Optional, Allow any external npm libs
+
+
+#### 🖥️ If you want to embed some of your n8n webhooks in other apps:
+Set [Content-Security-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) headers as [helmet.js](https://helmetjs.github.io/#content-security-policy) nested directives object.
+
+- Add your trusted domains at the end to allow embedding (keep 'self'):
+```
+N8N_CONTENT_SECURITY_POLICY="{\"default-src\":[\"*\"],\"script-src\":[\"*\",\"'unsafe-inline'\",\"'unsafe-eval'\"],\"style-src\":[\"*\",\"'unsafe-inline'\"],\"frame-ancestors\":[\"'self'\",\"https://mysite.com\",\"https://site.com.br\"]}"
+```
+- Or:
+
+ 1. In the RESPOND TO WEBHOOK node:  ; 2. Click "Add Options" --> "Response Headers"
+ 3. type in Name field: `Content-Security-Policy` ; 4. type in Value field: `default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; frame-ancestors 'self' https://app.mychat.com;` - replace app.mychat.com
 
 --------
 
