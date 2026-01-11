@@ -50,6 +50,12 @@ N8N_CONTENT_SECURITY_POLICY="{\"default-src\":[\"*\"],\"script-src\":[\"*\",\"'u
  1. In the RESPOND TO WEBHOOK node:  ; 2. Click "Add Options" --> "Response Headers"
  3. type in Name field: `Content-Security-Policy` ; 4. type in Value field: `default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; frame-ancestors 'self' https://app.mychat.com;` - replace app.mychat.com
 
+----------------
+
+ - ⚠️ Setting the variable below to true leaves your n8n instance vulnerable to XSS (Cross-Site Scripting). Leave it commented out or set it to false.
+
+`N8N_INSECURE_DISABLE_WEBHOOK_IFRAME_SANDBOX=false`
+
 --------
 
 #### 📥 Saving media locally: 
