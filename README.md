@@ -49,12 +49,10 @@ The only extra file system perms this image has is:
 #### 🖥️ If you want to embed some of your n8n webhooks in other apps:
 <details><summary>Click to expand</summary>
 <p>
-
- - ⚠️ Setting the variable below to true leaves your n8n instance vulnerable to XSS (Cross-Site Scripting). **Leave it commented out or set it to false.**
+- ⚠️ By default n8n allows ANYONE (any site) to embed your webhook raw text/html responses = vulnerable to XSS (Cross-Site Scripting).
+ -  **Set the variable below to false if you have it enabled or just do not set it at all.**
 
 `N8N_INSECURE_DISABLE_WEBHOOK_IFRAME_SANDBOX=false`
-
- - ⚠️ The effect of this variable was changed: n8n no longers wraps your webhook responses in iframes, now it uses Content-Security-Policy headers. They changed this variable to remove your security headers. (??)
 
 ------------------
 
@@ -63,13 +61,13 @@ The only extra file system perms this image has is:
 - Add this .env var and insert your trusted domains at the end inside **frame-ancestors** to allow embedding (keep the 'self' item tho):
 
 ```
-N8N_CONTENT_SECURITY_POLICY="{\"default-src\":[\"'self'\"],\"script-src\":[\"'self'\",\"'unsafe-inline'\",\"'unsafe-eval'\",\"https://cdn-rs.n8n.io\",\"https://static.cloudflareinsights.com\",\"https://us.i.posthog.com\"],\"style-src\":[\"'self'\",\"'unsafe-inline'\"],\"connect-src\":[\"'self'\",\"https://api.n8n.io\",\"https://us.i.posthog.com\"],\"img-src\":[\"'self'\",\"data:\",\"blob:\"],\"frame-ancestors\":[\"'self'\",\"https://trustedsite.com\",\"https://subdomain.myothersite.com\"]}"
+N8N_CONTENT_SECURITY_POLICY="{\"default-src\":[\"'self'\"],\"script-src\":[\"'self'\",\"'unsafe-inline'\",\"'unsafe-eval'\",\"https://cdn-rs.n8n.io\",\"https://static.cloudflareinsights.com\",\"https://us.i.posthog.com\"],\"style-src\":[\"'self'\",\"'unsafe-inline'\"],\"connect-src\":[\"'self'\",\"https://api.n8n.io\",\"https://us.i.posthog.com\"],\"img-src\":[\"*\"],\"frame-ancestors\":[\"'self'\",\"https://trustedsite.com\",\"https://subdomain.myothersite.com\"]}"
 ```
 - Explanation: 
 ```
 # connect-src : https://api.n8n.io for security updates & general update info
 # script-src: Added the CDNs (n8n, Cloudflare, Posthog) so the UI logic doesn't crash
-# img-src: Added blob: and data:. This fixes the Favicon and icon loading errors
+# img-src: Allow n8n frontend icon and images to load
 ```
 
 - Or if you want specific control over **specific webhooks allowing specific sites to embed** them:
