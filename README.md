@@ -21,6 +21,10 @@ N8n Unlocked: Run latest n8n with extra features:
 - This will run fine on serverless, you just won't be able to save files locally - use `yt-dlp -g <link>` in Execute Command node to get direct video file urls without needing any disk read/write permissions. Then fetch media with http node or elsewhere.
 ------------
 #### 🛡️ Security: 
+
+<details><summary>Click to expand</summary>
+<p>
+
 The only extra file system perms this image has is:
 - adding WriteFile+ReadFile node permission to access the downloads folder: (by default .n8n-files is only folder with r/w allowed)
    - `- N8N_RESTRICT_FILE_ACCESS_TO=/home/node/.n8n-files;/home/node/downloads/`
@@ -38,23 +42,41 @@ The only extra file system perms this image has is:
    - `NODE_FUNCTION_ALLOW_EXTERNAL=*` - Optional, Allow any external npm libs
 
 
-#### 🖥️ If you want to embed some of your n8n webhooks in other apps:
-Set [Content-Security-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) headers as [helmet.js](https://helmetjs.github.io/#content-security-policy) nested directives object.
+</p>
+</details>
 
-- Add your trusted domains at the end to allow embedding (keep 'self'):
+
+#### 🖥️ If you want to embed some of your n8n webhooks in other apps:
+<details><summary>Click to expand</summary>
+<p>
+
+ - ⚠️ Setting the variable below to true leaves your n8n instance vulnerable to XSS (Cross-Site Scripting). **Leave it commented out or set it to false.**
+
+`N8N_INSECURE_DISABLE_WEBHOOK_IFRAME_SANDBOX=false`
+
+------------------
+
+> From n8n source: "Set [Content-Security-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) headers as [helmet.js](https://helmetjs.github.io/#content-security-policy) nested directives object."
+
+- Add this .env var and insert your trusted domains at the end inside **frame-ancestors** to allow embedding (keep the 'self' item tho):
+
 ```
-N8N_CONTENT_SECURITY_POLICY="{\"default-src\":[\"*\"],\"script-src\":[\"*\",\"'unsafe-inline'\",\"'unsafe-eval'\"],\"style-src\":[\"*\",\"'unsafe-inline'\"],\"frame-ancestors\":[\"'self'\",\"https://mysite.com\",\"https://site.com.br\"]}"
+N8N_CONTENT_SECURITY_POLICY="{\"default-src\":[\"'self'\"],\"script-src\":[\"'self'\",\"'unsafe-inline'\",\"'unsafe-eval'\",\"https://cdn-rs.n8n.io\",\"https://static.cloudflareinsights.com\",\"https://us.i.posthog.com\"],\"style-src\":[\"'self'\",\"'unsafe-inline'\"],\"connect-src\":[\"'self'\",\"https://api.n8n.io\",\"https://us.i.posthog.com\"],\"img-src\":[\"'self'\",\"data:\",\"blob:\"],\"frame-ancestors\":[\"'self'\",\"https://trustedsite.com\",\"https://subdomain.myothersite.com\"]}"
 ```
-- Or:
+- Explanation: 
+```
+# connect-src : https://api.n8n.io for security updates & general update info
+# script-src: Added the CDNs (n8n, Cloudflare, Posthog) so the UI logic doesn't crash
+# img-src: Added blob: and data:. This fixes the Favicon and icon loading errors
+```
+
+- Or if you want specific control over **specific webhooks allowing specific sites to embed** them:
 
  1. In the RESPOND TO WEBHOOK node:  ; 2. Click "Add Options" --> "Response Headers"
  3. type in Name field: `Content-Security-Policy` ; 4. type in Value field: `default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; frame-ancestors 'self' https://app.mychat.com;` - replace app.mychat.com
+</p>
+</details>
 
-----------------
-
- - ⚠️ Setting the variable below to true leaves your n8n instance vulnerable to XSS (Cross-Site Scripting). Leave it commented out or set it to false.
-
-`N8N_INSECURE_DISABLE_WEBHOOK_IFRAME_SANDBOX=false`
 
 --------
 
