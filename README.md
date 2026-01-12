@@ -54,6 +54,8 @@ The only extra file system perms this image has is:
 
 `N8N_INSECURE_DISABLE_WEBHOOK_IFRAME_SANDBOX=false`
 
+ - ⚠️ The effect of this variable was changed: n8n no longers wraps your webhook responses in iframes, now it uses Content-Security-Policy headers. They changed this variable to remove your security headers. (??)
+
 ------------------
 
 > From n8n source: "Set [Content-Security-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) headers as [helmet.js](https://helmetjs.github.io/#content-security-policy) nested directives object."
