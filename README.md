@@ -50,7 +50,8 @@ The only extra file system perms this image has is:
 <details><summary>Click to expand</summary>
 <p>
 - ⚠️ By default n8n allows ANYONE (any site) to embed your webhook raw text/html responses = vulnerable to XSS (Cross-Site Scripting).
- -  **Set the variable below to false if you have it enabled or just do not set it at all.**
+   
+ - **Set the variable below to false if you have it enabled or just do not set it at all.**
 
 `N8N_INSECURE_DISABLE_WEBHOOK_IFRAME_SANDBOX=false`
 
@@ -63,6 +64,8 @@ The only extra file system perms this image has is:
 ```
 N8N_CONTENT_SECURITY_POLICY="{\"default-src\":[\"'self'\"],\"script-src\":[\"'self'\",\"'unsafe-inline'\",\"'unsafe-eval'\",\"https://cdn-rs.n8n.io\",\"https://static.cloudflareinsights.com\",\"https://us.i.posthog.com\"],\"style-src\":[\"'self'\",\"'unsafe-inline'\"],\"connect-src\":[\"'self'\",\"https://api.n8n.io\",\"https://us.i.posthog.com\"],\"img-src\":[\"*\"],\"frame-ancestors\":[\"'self'\",\"https://trustedsite.com\",\"https://subdomain.myothersite.com\"]}"
 ```
+- Done!
+
 - Explanation: 
 ```
 # connect-src : https://api.n8n.io for security updates & general update info
