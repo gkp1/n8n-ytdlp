@@ -6,7 +6,12 @@ N8n Unlocked: Run latest n8n with extra features:
 -  Python Code node enabled
 -   Execute Command node
 
-**Current version: 2.3.5**
+### **Current n8n version: [![npm version](https://img.shields.io/npm/v/n8n.svg)](https://www.npmjs.com/package/n8n)**
+
+![NPM Version (with dist tag)](https://img.shields.io/npm/v/n8n/stable)
+
+Beta version: 
+[![NPM Version (with dist tag)](https://img.shields.io/npm/v/n8n/next)](https://www.npmjs.com/package/n8n/v/2.4.3) = [![NPM Version (with dist tag)](https://img.shields.io/npm/v/n8n/beta)](https://www.npmjs.com/package/n8n/v/2.4.3)
 
 ![](https://raw.githubusercontent.com/gkp1/files/refs/heads/main/n8n-ytdlp/exec2026-01-02_23-08.png)
 -   Local File Trigger node
