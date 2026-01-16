@@ -11,8 +11,7 @@ N8n Unlocked: Run latest n8n with extra features:
 ### **Current n8n version: [![npm version](https://img.shields.io/npm/v/n8n.svg)](https://www.npmjs.com/package/n8n)**
 
 Beta version: 
-[![NPM Version (with dist tag)](https://img.shields.io/npm/v/n8n/next)](https://www.npmjs.com/package/n8n/) 
-= [![NPM Version (with dist tag)](https://img.shields.io/npm/v/n8n/beta)](https://www.npmjs.com/package/n8n/)
+[![NPM Version (with dist tag)](https://img.shields.io/npm/v/n8n/next)](https://www.npmjs.com/package/n8n/)
 
 --------------
 
