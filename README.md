@@ -2,6 +2,7 @@
 N8n Unlocked: Run latest n8n with extra features:
 - \* Uses latest official n8n package, no weird mods
 -  [Yt-dlp](https://github.com/yt-dlp/yt-dlp) for video downloading (writes to `./downloads` on host machine). Yt-dlp discord:   [![Discord](https://img.shields.io/discord/807245652072857610?color=blue&labelColor=555555&label=&logo=discord&style=for-the-badge)](https://discord.gg/H5MNcFW63r "Discord")
+-  Ffmpeg
 -  Deno
 -  Python Code node enabled
 -   Execute Command node
