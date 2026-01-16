@@ -6,6 +6,8 @@ N8n Unlocked: Run latest n8n with extra features:
 -  Python Code node enabled
 -   Execute Command node
 
+**Current version: 2.3.5**
+
 ![](https://raw.githubusercontent.com/gkp1/files/refs/heads/main/n8n-ytdlp/exec2026-01-02_23-08.png)
 -   Local File Trigger node
 
