@@ -8,17 +8,11 @@ N8n Unlocked: Run latest n8n with extra features:
 
 ------------
 
-### **Current n8n version:**
+### **Current n8n version: [![npm version](https://img.shields.io/npm/v/n8n.svg)](https://www.npmjs.com/package/n8n)**
 
-- [![npm version](https://img.shields.io/npm/v/n8n.svg)](https://www.npmjs.com/package/n8n)
-- [![NPM Version (with dist tag)](https://img.shields.io/npm/v/n8n/stable)](https://www.npmjs.com/package/n8n)
-
-#### Beta version: 
-- [![NPM Version (with dist tag)](https://img.shields.io/npm/v/n8n/next)](https://www.npmjs.com/package/n8n/)
-- [![NPM Version (with dist tag)](https://img.shields.io/npm/v/n8n/beta)](https://www.npmjs.com/package/n8n/)
-
-* The docker image **n8nio/runners:2.x.x** needs to be run on the same version as n8n@stable above. More details in installation steps below.
-
+Beta version: 
+[![NPM Version (with dist tag)](https://img.shields.io/npm/v/n8n/next)](https://www.npmjs.com/package/n8n/) 
+= [![NPM Version (with dist tag)](https://img.shields.io/npm/v/n8n/beta)](https://www.npmjs.com/package/n8n/)
 
 --------------
 
@@ -27,7 +21,7 @@ N8n Unlocked: Run latest n8n with extra features:
 
 ![](https://raw.githubusercontent.com/gkp1/files/refs/heads/main/n8n-ytdlp/localfile2026-01-02_23-08_1.png)
 
--   Allow install any npm package in custom community nodes
+-   Allow usage of any npm package
 
 ### Requirements:
 - Docker
@@ -107,31 +101,49 @@ N8N_CONTENT_SECURITY_POLICY="{\"default-src\":[\"'self'\"],\"script-src\":[\"'se
 
 ## Steps:
 
-### Clone repo && cd 
+### 1. Clone repo && cd 
 
 ```sh
 git clone https://github.com/gkp1/n8n-ytdlp.git && cd n8n-ytdlp
 ```
 
-### Build docker image n8n:ytdlp
+### 2. Build docker image 
+
+- Dockerfile will create an image and install latest stable n8n version: [![npm version](https://img.shields.io/npm/v/n8n.svg)](https://www.npmjs.com/package/n8n) plus yt-dlp and practically all yt-dlp dependencies
 
 ```sh
 docker buildx build -t n8n:ytdlp .
 ```
 
-### Add valid n8n .env variables
+### 3. Add valid n8n .env variables
 
 ```sh
 cp .env.example .env && nano .env
 ```
 
-### Run -detached
+### 4. Run -detached
 
 ```sh
 docker compose up -d && docker ps
 ```
 
-⚠️ Important:
+### 5. Last step (do not skip)
+
+- Open n8n on your browser and **check your version** (Click the 'help' button in bottom left -> 'About n8n')
+
+<img width="234" height="148" alt="image" src="https://github.com/user-attachments/assets/32c2ebdd-b644-486f-b542-6734178668b2" />
+
+- Open your docker-compose.yaml
+```sh
+nano docker-compose.yaml
+```
+- Set your task-runners image tag to be the current n8n version, if it's not:
+```sh
+  task-runners:
+    image: n8nio/runners:2.3.5    # <---- Stable version in 16/01/2026
+```
+
+⚠️ 6. Important:
 If you're on linux: run on host (allow container write)
 ```sh
 chown -R 1000:1000 ./downloads
@@ -143,17 +155,18 @@ chown -R 1000:1000 ./downloads
 cd n8n-ytdlp
 ```
 
-Rebuild with no cache -> restart
+- Rebuild the image to fetch and install n8n@latest && restart:
 
 ```sh
 docker buildx build -t n8n:ytdlp --no-cache . && docker compose down && docker compose up -d
 ```
 
-_default version: latest n8n version from npm_
+- Repeat step 5 above to set your task-runners image to the new n8n version
 
 
-#### todo
-- sync n8n runners and n8n versions
+#### to-do: (feel free to open a PR)
+- custom task-runners image with extra npm packages to use in code node
+- sync n8n runners and n8n versions automatically
 - add default localhost ip ready to go env vars
 - gh action to build + push to docker hub
 - optimize docker image size / expand official image
