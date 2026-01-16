@@ -8,13 +8,17 @@ N8n Unlocked: Run latest n8n with extra features:
 
 ------------
 
-### **Current n8n version: [![npm version](https://img.shields.io/npm/v/n8n.svg)](https://www.npmjs.com/package/n8n)**
+### **Current n8n version:**
 
-[![NPM Version (with dist tag)](https://img.shields.io/npm/v/n8n/stable)](https://www.npmjs.com/package/n8n)
+- [![npm version](https://img.shields.io/npm/v/n8n.svg)](https://www.npmjs.com/package/n8n)
+- [![NPM Version (with dist tag)](https://img.shields.io/npm/v/n8n/stable)](https://www.npmjs.com/package/n8n)
 
-Beta version: 
-[![NPM Version (with dist tag)](https://img.shields.io/npm/v/n8n/next)](https://www.npmjs.com/package/n8n/) 
-= [![NPM Version (with dist tag)](https://img.shields.io/npm/v/n8n/beta)](https://www.npmjs.com/package/n8n/)
+#### Beta version: 
+- [![NPM Version (with dist tag)](https://img.shields.io/npm/v/n8n/next)](https://www.npmjs.com/package/n8n/)
+- [![NPM Version (with dist tag)](https://img.shields.io/npm/v/n8n/beta)](https://www.npmjs.com/package/n8n/)
+
+* The docker image **n8nio/runners:2.x.x** needs to be run on the same version as n8n@stable above. More details in installation steps below.
+
 
 --------------
 
