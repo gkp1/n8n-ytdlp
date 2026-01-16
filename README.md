@@ -13,6 +13,10 @@ N8n Unlocked: Run latest n8n with extra features:
 Beta version: 
 [![NPM Version (with dist tag)](https://img.shields.io/npm/v/n8n/next)](https://www.npmjs.com/package/n8n/)
 
+- If you want to run beta: set the **exact same version** in both places:
+   - `Dockerfile`: in the `npm install` line, replace `n8n` with `n8n@2.x.x`
+   - `docker-compose.yaml`: set the task-runners image version: `n8nio/runners:2.x.x`
+
 --------------
 
 ![](https://raw.githubusercontent.com/gkp1/files/refs/heads/main/n8n-ytdlp/exec2026-01-02_23-08.png)
