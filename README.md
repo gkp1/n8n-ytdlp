@@ -145,7 +145,7 @@ nano docker-compose.yaml
 - Current version is [![npm version](https://img.shields.io/npm/v/n8n.svg)](https://www.npmjs.com/package/n8n)
 ```sh
   task-runners:
-    image: n8nio/runners:2.3.5    # <---- Stable version in 16/01/2026
+    image: n8nio/runners:2.3.5    # <---- Update
 ```
 
 ⚠️ 6. Important:
