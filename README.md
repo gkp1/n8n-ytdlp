@@ -20,10 +20,10 @@ Beta version:
 
 --------------
 
-![](https://raw.githubusercontent.com/gkp1/files/refs/heads/main/n8n-ytdlp/exec2026-01-02_23-08.png)
+![](https://github.com/Kitty-Terminal/src/blob/main/n8n-ytdlp/exec2026-01-02_23-08.png)
 -   Local File Trigger node
 
-![](https://raw.githubusercontent.com/gkp1/files/refs/heads/main/n8n-ytdlp/localfile2026-01-02_23-08_1.png)
+![](https://github.com/Kitty-Terminal/src/blob/main/n8n-ytdlp/localfile2026-01-02_23-08_1.png)
 
 -   Allow usage of any npm package
 
