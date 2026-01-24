@@ -142,6 +142,7 @@ docker compose up -d && docker ps
 nano docker-compose.yaml
 ```
 - Set your task-runners image tag to be the current n8n version, if it's not:
+- Current version is [![npm version](https://img.shields.io/npm/v/n8n.svg)](https://www.npmjs.com/package/n8n)
 ```sh
   task-runners:
     image: n8nio/runners:2.3.5    # <---- Stable version in 16/01/2026
