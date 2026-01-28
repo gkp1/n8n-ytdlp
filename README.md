@@ -13,7 +13,7 @@ N8n Unlocked: Run latest n8n with extra features:
 ### **Current n8n version: [![npm version](https://img.shields.io/npm/v/n8n.svg)](https://www.npmjs.com/package/n8n)**
 
 Beta version: 
-[![NPM Version (with dist tag)](https://img.shields.io/npm/v/n8n/next)](https://www.npmjs.com/package/n8n/)
+[![NPM Version (with dist tag)](https://img.shields.io/npm/v/n8n/beta)](https://www.npmjs.com/package/n8n/)
 
 - If you want to run beta: set the **exact same version** in both places:
    - `Dockerfile`: in the `npm install` line, replace `n8n` with `n8n@2.x.x`
@@ -161,7 +161,7 @@ chown -R 1000:1000 ./downloads
 cd n8n-ytdlp
 ```
 
-- Rebuild the image to fetch and install n8n@latest && restart:
+- Rebuild the image to fetch and install n8n@stable && restart:
 
 ```sh
 docker buildx build -t n8n:ytdlp --no-cache . && docker compose down && docker compose up -d
